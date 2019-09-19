@@ -29,16 +29,15 @@ plot(FoodDisTable$Vegetables~FoodDisTable$SaturatedFats, col = "blue", main = "C
 hist(FoodDisTable$WholeGrains, main = "Amount of Whole Grains in Our Common Foods", xlab = "Whole Grains", col = rainbow(4), xlim = c(0,2))
 hist(FoodDisTable$SaturatedFats, main = "Sat Fat Content in Common Foods", xlab = "Saturated Fat Content", col = rainbow(5), xlim = c(0,25))
 
-summary(FoodDisTable)
-# I'm struggling to get the hellinger model made. As a result I can't make the heatmap
-# ComFoodTable <- table(FoodDisTable$Dietary, FoodDisTable$SaturatedFats, FoodDisTable$Calories,
-#                       FoodDisTable$Grains, FoodDisTable$WholeGrains, FoodDisTable$Vegetables, FoodDisTable$OrangeVegetables,
-#                      FoodDisTable$DrkgreenVegetables, FoodDisTable$Starchyvegetables, FoodDisTable$OtherVegetables,
-#                       FoodDisTable$Fruits, FoodDisTable$Milk, FoodDisTable$Meats, FoodDisTable$Soy,
-#                       FoodDisTable$DrybeansPeas, FoodDisTable$Oils, FoodDisTable$SolidFats, FoodDisTable$AddedSugars,
-#                       FoodDisTable$Alcohol)
+# Heat Map of Nutrients for each food
+# FoodTable2 <- FoodDisTable[,c("SaturatedFats", "Calories",
+#                               "Grains", "WholeGrains", "Vegetables", "OrangeVegetables",
+#                               "DrkgreenVegetables", "Starchyvegetables", "OtherVegetables",
+#                               "Fruits", "Milk", "Meats", "Soy",
+#                               "DrybeansPeas", "Oils", "SolidFats", "AddedSugars",
+#                               "Alcohol")]
 # 
-# food_hellinger <- decostand(FoodDisTable, method = "hellinger")
+# food_hellinger <- decostand(FoodTable2, method = "hellinger", na.rm = TRUE)
 # pheatmap(food_hellinger, cluster_cols=FALSE, cellwidth=8, cellheight=8, main='Common Foods')
 
 # Plots showing other nutritional splits based on dietary restrictions
